@@ -1,3 +1,11 @@
+/**
+ * Interactive drawing program
+ * 
+ * @author your name (you@domain.com)
+ * @date 2023-01-23
+ * @file blobilism.cpp
+ */
+
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -18,7 +26,7 @@ class MyWindow : public Window {
   void setup() override {
     std::cout << "Window size: " << width() << ", " << height() << std::endl;
     for (int i = 0; i < colors.size(); i++) {
-      Circle paletteCirc = {colors[i], 50, int(55*(i+0.6)), 35};
+      Circle paletteCirc = {colors[i], 50, int(55 * (i + 0.6)), 35};
       paletteCircles.push_back(paletteCirc);
     }
   }
@@ -35,7 +43,7 @@ class MyWindow : public Window {
       float my = mouseY();  // current mouse pos y
       for (Circle paletteCirc : paletteCircles) {
         float dist = sqrt(pow(mx - paletteCirc.x, 2) + pow(my - paletteCirc.y, 2));
-        if (dist <= paletteCirc.circleSize/2) {
+        if (dist <= paletteCirc.circleSize / 2) {
           currentColor = paletteCirc.color;
           currentColor.push_back(currentAlpha);
           std::cout << "Setting color to " << currentColor[0] << " " << currentColor[1] << " " << currentColor[2] << std::endl;
@@ -81,15 +89,15 @@ class MyWindow : public Window {
       color(circ.color[0], circ.color[1], circ.color[2], circ.color[3]);
       // keyhole paint brush
       circle(circ.x, circ.y, circ.circleSize);
-      triangle(circ.x, circ.y, circ.circleSize*0.8, circ.circleSize);
+      triangle(circ.x, circ.y, circ.circleSize * 0.8, circ.circleSize);
     }
 
     // draw pallet
     color(0.1f, 0.1f, 0.1f);
-    square(width()/2.0f, 35, width(), 70);
+    square(width() / 2.0f, 35, width(), 70);
     for (int i = 0; i < paletteCircles.size(); i++) {
       color(paletteCircles[i].color[0], paletteCircles[i].color[1], paletteCircles[i].color[2]);
-      circle(55*(i+0.6), 35, 50);
+      circle(55*(i + 0.6), 35, 50);
     }
   }
  private:

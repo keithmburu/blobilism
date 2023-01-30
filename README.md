@@ -1,6 +1,6 @@
 # Blobilism
 
-This demo implements a simple drawing program based on a circle brush.
+This demo implements a simple drawing program based on a keyhole brush.
 
 * Supports multiple brush sizes (no smaller than size 1)
 * Supports multiple colors with a pallette (at least three) 
@@ -9,7 +9,9 @@ This demo implements a simple drawing program based on a circle brush.
 
 ## Results
 
-TODO: Put images of what you've made here
+![](demo1.png)
+![](demo2.png)
+![](demo3.png)
 
 ## How to build
 
